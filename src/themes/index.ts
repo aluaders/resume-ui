@@ -1,8 +1,5 @@
-import { darkTheme } from './dark';
-import { lightTheme } from './light';
-
-export * from './dark';
-export * from './light';
+import { darkTheme } from '@aluaders/mui-theme';
+import { lightTheme } from '@aluaders/mui-theme';
 
 export const themes = {
     dark: darkTheme,
