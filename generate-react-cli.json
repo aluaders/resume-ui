@@ -1,0 +1,35 @@
+{
+  "usesTypeScript": true,
+  "usesCssModule": false,
+  "usesStyledComponents": false,
+  "cssPreprocessor": "css",
+  "testLibrary": "Testing Library",
+  "component": {
+    "default": {
+      "path": "src/components",
+      "withDefault": true,
+      "withIndex": true,
+      "withInterface": true,
+      "withLazy": true,
+      "withLoad": true,
+      "withMock": true,
+      "withMockInterface": true,
+      "withStory": true,
+      "withStyle": false,
+      "withStyles": true,
+      "withTest": true,
+      "customTemplates": {
+        "component": "src/utils/generate-react-cli/templates/TemplateName.tsx",
+        "default":  "src/utils/generate-react-cli/templates/TemplateName.default.ts",
+        "index": "src/utils/generate-react-cli/templates/index.ts",
+        "interface": "src/utils/generate-react-cli/templates/TemplateName.interface.ts",
+        "lazy": "src/utils/generate-react-cli/templates/TemplateName.lazy.tsx",
+        "load": "src/utils/generate-react-cli/templates/TemplateName.load.tsx",
+        "mock": "src/utils/generate-react-cli/templates/TemplateName.mock.tsx",
+        "mockInterface": "src/utils/generate-react-cli/templates/TemplateName.interface-mock.ts",
+        "story": "src/utils/generate-react-cli/templates/TemplateName.stories.ts",
+        "styles": "src/utils/generate-react-cli/templates/TemplateName.styles.ts"
+      }
+    }
+  }
+}
