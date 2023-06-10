@@ -1,10 +1,17 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
+import { readdirSync } from 'fs';
+
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const config: StorybookConfig = {
   stories: [
-    '../src/**/*.mdx', 
-    '../src/**/*.stories.@(js|jsx|ts|tsx)'
+    "../src/**/*.mdx",
+    ...readdirSync(__dirname + '/../src/', { withFileTypes: true })
+      .filter((dirent) => dirent.isDirectory())
+      .filter((dirent) => dirent.name !== 'utils')
+      .map(
+        (dirent) => `../src/${dirent.name}/**/*.stories.@(js|jsx|ts|tsx|mdx)`
+      ),
   ],
   addons: [
     '@storybook/addon-links',
