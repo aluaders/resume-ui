@@ -1,5 +1,3 @@
-import * as React from 'react';
-
-export default function HeaderMock() {
+export default function mockHeader() {
     return (<div data-testid="Header-mock"/>);
 }
