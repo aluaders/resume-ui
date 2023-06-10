@@ -17,9 +17,11 @@
     "@types/node": "^16.18.33",
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
+    "dpdm": "^3.13.1",
     "generate-react-cli": "^8.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.12.1",
     "react-scripts": "5.0.1",
     "tsconfig-paths-webpack-plugin": "^4.0.1",
     "tss-react": "^4.8.6",
@@ -30,10 +32,11 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "test:coverage": "npm run craco test -- --coverage .",
+    "test:coverage": "npm run test -- --coverage .",
     "eject": "craco eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "dependency": "dpdm ./src/index.tsx"
   },
   "eslintConfig": {
     "extends": [
@@ -70,5 +73,26 @@
     "prop-types": "^15.8.1",
     "storybook": "^7.0.18",
     "webpack": "^5.84.1"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "statements": 75,
+        "branches": 50,
+        "functions": 75,
+        "lines": 75
+      }
+    },
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/themes",
+      "<rootDir>/src/assets",
+      "<rootDir>/src/utils/generate-react-cli",
+      "stories.ts",
+      "stories.tsx",
+      "index.ts",
+      "index.tsx",
+      "lazy.tsx",
+      "reportWebVitals.ts"
+    ]
   }
 }
