@@ -15,7 +15,7 @@ const tabOptions = Object.keys(Paths).map(key => {
 
     return (
         <Tab 
-            data-testid={`menu-tab-${key}-testid`}
+            data-testid={`menu-tab-${key}`}
             key={key} 
             aria-controls={`menu-tab-${key}`} 
             label={key} 
@@ -49,6 +49,7 @@ export function TabNavigation(props: TabNavigationProps) {
                 aria-label="content navigation"
                 allowScrollButtonsMobile
                 variant="scrollable"
+                scrollButtons="auto"
                 orientation={useMediaQuery(theme.breakpoints.up('md')) ? 'vertical' : 'horizontal'}
             >
                 {tabOptions}

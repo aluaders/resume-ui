@@ -4,6 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import Header from './Header';
 import mockMenuNavigation from '@/components/MenuNavigation/MenuNavigation.mock';
 import type { MenuNavigationProps } from '@/components/MenuNavigation';
+import Loading from './Header.load';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -23,4 +24,12 @@ describe('<Header />', () => {
 
     expect(header).toBeInTheDocument();
   });
+
+  test('is should mount loading', () => {
+    render(<Loading />);
+    
+    const loading = screen.getByTestId('LoadingHeader');
+
+    expect(loading).toBeInTheDocument();
+  })
 });

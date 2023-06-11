@@ -28,7 +28,8 @@
         "mock": "src/utils/generate-react-cli/templates/TemplateName.mock.tsx",
         "mockInterface": "src/utils/generate-react-cli/templates/TemplateName.interface-mock.ts",
         "story": "src/utils/generate-react-cli/templates/TemplateName.stories.ts",
-        "styles": "src/utils/generate-react-cli/templates/TemplateName.styles.ts"
+        "styles": "src/utils/generate-react-cli/templates/TemplateName.styles.ts",
+        "test": "src/utils/generate-react-cli/templates/TemplateName.test.ts"
       }
     }
   }

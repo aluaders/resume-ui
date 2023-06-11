@@ -4,12 +4,11 @@ import { IconButton, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Paths } from '@/utils/routes/paths';
 import type { PathsType } from '@/utils/routes/router.interface';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { MenuNavigationProps } from './MenuNavigation.interface';
 
 export function MenuNavigation(props: MenuNavigationProps) {
     const navigation = useNavigate();
-    const { pathname } = useLocation();
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     
@@ -35,11 +34,10 @@ export function MenuNavigation(props: MenuNavigationProps) {
     
         return (
             <MenuItem 
-                data-testid={`menu-item-${key}-testid`}
+                data-testid={`menu-item-${key}`}
                 key={key} 
                 aria-controls={`menu-item-${key}`}
                 onClick={() => handleMenuItemClick(Paths[keyValue] as string)}
-                selected={key === pathname}
             >
                 {key}
             </MenuItem>
@@ -50,6 +48,7 @@ export function MenuNavigation(props: MenuNavigationProps) {
         <div data-testid="MenuNavigation" {...props}>
             <IconButton
                 id="menu-nav-button"
+                data-testid='menu-nav-button'
                 aria-controls={open ? 'menu-nav-button' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
