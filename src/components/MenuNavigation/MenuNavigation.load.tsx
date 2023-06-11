@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export function Loading() {
     return (
-        <div data-testid='LoadingTemplateName'><p><i>Loading...</i></p></div>
+        <div data-testid='LoadingMenuNavigation'><p><i>Loading...</i></p></div>
     )
 }
 

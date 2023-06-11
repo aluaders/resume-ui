@@ -1,54 +1,62 @@
+import * as React from 'react';
 import type { RouteObject } from "react-router-dom";
-import { EnhancedRouterObject, PathsType, RoutesType } from "./router.interface";
+import { Paths } from "./paths";
+import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 
-export const enhancedRoutes: RoutesType = [
+const App = React.lazy(() => import('@/pages/App'));
+const TabNavigation = React.lazy(() => import('@/components/TabNavigation'));
+const Header = React.lazy(() => import('@/components/Header'));
+
+function TempLayout() {
+    const theme = useTheme();
+
+    return (
+        <div>
+            <Header />
+                <Box sx={{...theme.mixins.toolbar}} />
+            <Stack
+                spacing={0}
+                direction={useMediaQuery(theme.breakpoints.up('md')) ? 'row' : 'column'}
+                alignItems="center"
+            >
+                <TabNavigation />
+                <App />
+            </Stack>
+        </div>
+    )
+}
+
+export const routes: RouteObject[] = [
     {
-        title: 'Home',
-        path: '/',
-        element: <div>Home</div>,
+        path: Paths.Home,
+        element: <TempLayout />,
     },
     {
-        title: 'About',
-        path: '/about',
-        element: <div>About</div>,
+        path: Paths.About,
+        element: <TempLayout />,
     },
     {
-        title: 'Work',
-        path: '/work',
-        element: <div>Work</div>,
+        path: Paths.Work,
+        element: <TempLayout />,
     },
     {
-        title: 'Contribute',
-        path: '/contribute',
-        element: <div>Contribute</div>,
+        path: Paths.Contribute,
+        element: <TempLayout />,
     },
     {
-        title: 'Skillset',
-        path: '/skillset',
-        element: <div>Skillset</div>,
+        path: Paths.Skillset,
+        element: <TempLayout />,
     },
     {
-        title: 'Teachings',
-        path: '/teachings',
-        element: <div>Teachings</div>,
+        path: Paths.Teachings,
+        element: <TempLayout />,
     },
     {
-        title: 'Projects',
-        path: '/projects',
-        element: <div>projects</div>,
+        path: Paths.Projects,
+        element: <TempLayout />,
     },
     {
-        title: 'Contact',
-        path: '/contact',
-        element: <div>About</div>,
+        path: Paths.Contact,
+        element: <TempLayout />,
     }
 ]
-
-export const routes: RouteObject[] = [];
-export const paths: PathsType = {};
-
-enhancedRoutes.forEach((er: EnhancedRouterObject) => { 
-    const { title, ...restObject } =  er;
-    routes.push(restObject);
-    paths[title] = er.path;
-})

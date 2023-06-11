@@ -18,7 +18,8 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/preset-create-react-app',
     '@storybook/addon-interactions',
-    '@storybook/addon-styling'
+    '@storybook/addon-styling',
+    'storybook-addon-react-router-v6'
   ],
   webpackFinal: async (config) => {
     if(!config.resolve) config.resolve = {};

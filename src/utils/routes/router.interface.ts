@@ -1,11 +1,16 @@
 import type { RouteObject } from "react-router-dom";
 
-export type EnhancedRouterObject = RouteObject & {
-    title: string;
+export enum PathNameEnum {
+    Home = 'Home',
+    About = 'About',
+    Work = 'Work',
+    Contribute = 'Contribute',
+    Skillset = 'Skillset',
+    Teachings = 'Teachings',
+    Projects = 'Projects',
+    Contact = 'Contact'
 }
 
-export type RoutesType = EnhancedRouterObject[]
-
-export interface PathsType {
-    [title: EnhancedRouterObject['title']]: EnhancedRouterObject['path'];
+export type PathsType = {
+    [name in PathNameEnum]: RouteObject['path'];
 }
