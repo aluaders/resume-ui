@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { withRouter } from 'storybook-addon-react-router-v6';
 
-import { Header } from './Header';
+import { TabNavigation } from './TabNavigation';
 
 const meta = {
-  title: 'components/Header',
-  component: Header,
+  title: 'components/TabNavigation',
+  component: TabNavigation,
   decorators: [withRouter],
   tags: ['autodocs'],
-} satisfies Meta<typeof Header>;
+} satisfies Meta<typeof TabNavigation>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

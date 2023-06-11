@@ -2,9 +2,10 @@ import * as React from 'react';
 
 import { useStyles } from './Header.styles';
 import { useTheme } from '@mui/material/styles';
-import { AppBar, Avatar, Box, Divider, Stack, Toolbar, Typography, useMediaQuery } from '@mui/material';
+import { AppBar, Avatar, Divider, Stack, Toolbar, Typography, useMediaQuery } from '@mui/material';
 import FollowTheSignsIcon from '@mui/icons-material/FollowTheSigns';
 import avatar from '@/assets/images/anthony_avatar.jpg';
+import MenuNavigation from '@/components/MenuNavigation';
 
 export function Header() {
     const { classes, cx } = useStyles();
@@ -34,6 +35,7 @@ export function Header() {
                         </Typography>
                     </Stack>
                 </Stack>
+                <MenuNavigation className={classes.menu} />
                 <Stack 
                     direction="row" 
                     divider={<Divider orientation="vertical" flexItem />}

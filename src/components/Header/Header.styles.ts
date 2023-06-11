@@ -35,6 +35,12 @@ export const useStyles = makeStyles()((theme) => {
                 display: 'none'
             }
         },
+        menu: {
+            marginLeft: 'auto',
+            [theme.breakpoints.up('sm')]: {
+                display: 'none'
+            }
+        },
         nameDivider: {
             display: 'none',
             [theme.breakpoints.up('lg')]: {

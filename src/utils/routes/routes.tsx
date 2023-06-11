@@ -1,54 +1,41 @@
 import type { RouteObject } from "react-router-dom";
-import { EnhancedRouterObject, PathsType, RoutesType } from "./router.interface";
+import { Paths } from "./paths";
+import React from "react";
 
-export const enhancedRoutes: RoutesType = [
+const App = React.lazy(() => import('@/pages/App'));
+const TabNavigation = React.lazy(() => import('@/components/TabNavigation'));
+
+export const routes: RouteObject[] = [
     {
-        title: 'Home',
-        path: '/',
-        element: <div>Home</div>,
+        path: Paths.Home,
+        element: <App />,
     },
     {
-        title: 'About',
-        path: '/about',
-        element: <div>About</div>,
+        path: Paths.About,
+        element: <TabNavigation />,
     },
     {
-        title: 'Work',
-        path: '/work',
+        path: Paths.Work,
         element: <div>Work</div>,
     },
     {
-        title: 'Contribute',
-        path: '/contribute',
+        path: Paths.Contribute,
         element: <div>Contribute</div>,
     },
     {
-        title: 'Skillset',
-        path: '/skillset',
+        path: Paths.Skillset,
         element: <div>Skillset</div>,
     },
     {
-        title: 'Teachings',
-        path: '/teachings',
+        path: Paths.Teachings,
         element: <div>Teachings</div>,
     },
     {
-        title: 'Projects',
-        path: '/projects',
+        path: Paths.Projects,
         element: <div>projects</div>,
     },
     {
-        title: 'Contact',
-        path: '/contact',
-        element: <div>About</div>,
+        path: Paths.Contact,
+        element: <div>contact</div>,
     }
 ]
-
-export const routes: RouteObject[] = [];
-export const paths: PathsType = {};
-
-enhancedRoutes.forEach((er: EnhancedRouterObject) => { 
-    const { title, ...restObject } =  er;
-    routes.push(restObject);
-    paths[title] = er.path;
-})

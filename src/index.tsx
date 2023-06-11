@@ -23,7 +23,6 @@ root.render(
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <RouterProvider router={router} />
-      <App />
     </ThemeProvider>
   </React.StrictMode>
 );
