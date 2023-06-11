@@ -8,7 +8,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 
 import { Paths } from '@/utils/routes/paths';
-import type { PathsType } from '@/utils/routes';
+import type { PathsType } from '@/utils/routes/router.interface';
 
 const tabOptions = Object.keys(Paths).map(key => {
     const keyValue = key as keyof PathsType;

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Paths } from '@/utils/routes/paths';
-import type { PathsType } from '@/utils/routes';
+import type { PathsType } from '@/utils/routes/router.interface';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { MenuNavigationProps } from './MenuNavigation.interface';
 
