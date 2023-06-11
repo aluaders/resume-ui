@@ -1,5 +1,3 @@
-import * as React from 'react';
-
-export default function TemplateNameMock() {
+export default function mockTemplateName() {
     return (<div data-testid="TemplateName-mock"/>);
 }

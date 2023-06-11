@@ -1,0 +1,1 @@
+export type TabNavigationProps = React.HTMLAttributes<HTMLDivElement>;
