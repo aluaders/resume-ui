@@ -36,7 +36,6 @@ export function TabNavigation(props: TabNavigationProps) {
     }, [pathname]);
 
     function handleChange(_event: React.SyntheticEvent, path: string) {
-        setSelected(pathname);
         navigation(path);
     }
 
